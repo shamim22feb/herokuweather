@@ -8,7 +8,7 @@ ownkey = '1b37dde14785c8d4061fef7f6c38f8c0'
 own = pyowm.OWM(ownkey)
 
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/webhook', methods=['POST','GET'])
 @cross_origin()
 
 def webhook():
