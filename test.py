@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 ownkey = '1b37dde14785c8d4061fef7f6c38f8c0'
-own = pyowm.OWM(ownkey)
+owm = pyowm.OWM(ownkey)
 
 
 @app.route('/webhook', methods=['POST','GET'])
