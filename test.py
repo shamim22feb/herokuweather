@@ -37,8 +37,8 @@ def processRequest(req):
     humidity = str(w.get_humidity())
     #temp_dict_kelvin = w.temperature()  # a dict in Kelvin units (default when no temperature units provided)
     celsius_result = w.get_temperature('celsius')
-    temp_min_celsius = str(celsius_result.get('temp_min'))
-    temp_max_celsius = str(celsius_result.get('temp_max'))
+    temp_min = str(celsius_result.get('temp_min'))
+    temp_max = str(celsius_result.get('temp_max'))
     #temp_min = temp_dict_kelvin['temp_min']
     #temp_max = temp_dict_kelvin['temp_max']
     speech = 'Today weather report of :'+city+'\n'+'Minimum Temperature(Celsius) : ' + str(temp_min) + 'Maximum Temperature(Celsius) :'+str(temp_max)+'\n'+ "Humidity :" + humidity + ".\n Wind Speed :" + wind_speed
