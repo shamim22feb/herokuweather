@@ -41,7 +41,7 @@ def processRequest(req):
     temp_max = str(celsius_result.get('temp_max'))
     #temp_min = temp_dict_kelvin['temp_min']
     #temp_max = temp_dict_kelvin['temp_max']
-    speech = 'Today weather report of :'+city+'\n'+'Minimum Temperature(Celsius) : ' + str(temp_min) + 'Maximum Temperature(Celsius) :'+str(temp_max)+'\n'+ "Humidity :" + humidity + ".\n Wind Speed :" + wind_speed
+    speech = 'Today weather report of '+city+':\n\n'+'Minimum Temperature(in Celsius) : ' + str(temp_min) +'\n'+ 'Maximum Temperature(in Celsius) :'+str(temp_max)+'\n'+ "Humidity :" + humidity + "\nWind Speed :" + wind_speed
     return {
         'fulfillmentText': speech,
         'displaytext': speech
