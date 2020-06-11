@@ -31,13 +31,17 @@ def processRequest(req):
     observation = owm.weather_at_place(city)
     #w = observation.weather
     w = observation.get_weather()
+    wind_res = w.get_wind()
+    wind_speed = str(wind_res.get('speed'))
+
+    humidity = str(w.get_humidity())
     #temp_dict_kelvin = w.temperature()  # a dict in Kelvin units (default when no temperature units provided)
     celsius_result = w.get_temperature('celsius')
     temp_min_celsius = str(celsius_result.get('temp_min'))
     temp_max_celsius = str(celsius_result.get('temp_max'))
     #temp_min = temp_dict_kelvin['temp_min']
     #temp_max = temp_dict_kelvin['temp_max']
-    speech = 'Today weather report :'+'\n'+'Temperature(Min---Max)' + str(temp_min_celsius) + " "+str(temp_max_celsius)
+    speech = 'Today weather report of :'+city+'\n'+'Minimum Temperature(Celsius) : ' + str(temp_min) + 'Maximum Temperature(Celsius) :'+str(temp_max)+'\n'+ "Humidity :" + humidity + ".\n Wind Speed :" + wind_speed
     return {
         'fulfillmentText': speech,
         'displaytext': speech
